@@ -1197,6 +1197,17 @@ img {
 
 /* ===== OVERLAY MENU ===== */
 
+.pt-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  pointer-events: none;
+  will-change: transform;
+}
+
 .om-toggler {
   position: fixed;
   top: 1.75rem;

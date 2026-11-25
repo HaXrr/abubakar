@@ -9,7 +9,7 @@ export default function SiteShellClient({ children }: { children: React.ReactNod
   return (
     <>
       {pathname !== '/' && <Navbar />}
-      <PageTransition key={pathname}>{children}</PageTransition>
+      <PageTransition pathname={pathname}>{children}</PageTransition>
     </>
   )
 }

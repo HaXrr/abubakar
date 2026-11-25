@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar'
 const introImages = [
   'https://360fabriek.nl/assets/Brandweer_VR_Banner-C53oJvrA.avif',
   'https://360fabriek.nl/assets/vtwonen_thumb-cRpJPe-l.avif',
-  '/images/hero/abu-bakar-2.jpg',
+  '/images/hero/abu-bakar.avif',
   'https://360fabriek.nl/assets/CA-thumbnail-COpyOzgi.avif',
   'https://360fabriek.nl/assets/I-KOOK-thumbnail-B-t_VUHh.avif',
 ]

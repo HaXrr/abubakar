@@ -8,9 +8,9 @@ import { gsap, SplitText, useGSAP } from '@/lib/gsap'
 const primaryLinks = [
   { label: 'Home', href: '/' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Add-ons', href: '#about' },
-  { label: 'Try Me', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Add-ons', href: '/#about' },
+  { label: 'Try Me', href: '/#contact' },
 ]
 
 const secondaryLinks = [
@@ -48,17 +48,25 @@ export default function OverlayMenu() {
   const isMounted = useRef(false)
   const pathname = usePathname()
 
+  const closeMenu = useCallback(() => {
+    if (!isOpenRef.current || !tlRef.current) return
+
+    isOpenRef.current = false
+    isAnimatingRef.current = true
+    togglerRef.current?.classList.remove('om-toggler--open')
+
+    const q = selectorRef.current
+    if (q) gsap.killTweensOf(q('.om-line'))
+    tlRef.current.reverse()
+  }, [])
+
   useEffect(() => {
     if (!isMounted.current) {
       isMounted.current = true
       return
     }
-    if (!isOpenRef.current || isAnimatingRef.current || !tlRef.current) return
-    isAnimatingRef.current = true
-    togglerRef.current?.classList.remove('om-toggler--open')
-    tlRef.current.reverse()
-    isOpenRef.current = false
-  }, [pathname])
+    closeMenu()
+  }, [pathname, closeMenu])
 
   useGSAP(
     () => {
@@ -171,11 +179,11 @@ export default function OverlayMenu() {
             <div className="om-primary-links">
               {primaryLinks.map((l) =>
                 l.href.startsWith('/') ? (
-                  <Link key={l.label} href={l.href}>
+                  <Link key={l.label} href={l.href} onClick={closeMenu}>
                     {l.label}
                   </Link>
                 ) : (
-                  <a key={l.label} href={l.href}>
+                  <a key={l.label} href={l.href} onClick={closeMenu}>
                     {l.label}
                   </a>
                 ),

@@ -50,7 +50,7 @@ export default function QuoteSection() {
   )
 
   return (
-    <section ref={rootRef} className="qs-section">
+    <section ref={rootRef} id="about" className="qs-section">
       <p className="qs-eyebrow">my philosophy</p>
       <blockquote className="qs-quote">
         Curious by nature, driven by technology, and passionate about building for the web. I transform ideas into functional, scalable, and engaging digital experiences while continuously learning, experimenting, and pushing the boundaries of what's possible.
