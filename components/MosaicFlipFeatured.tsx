@@ -80,9 +80,9 @@ export default function MosaicFlipFeatured() {
       </div>
 
       <div className="mff-meta">
-        <p className="mff-eyebrow">Uitgelicht</p>
-        <h2 className="mff-heading">Cases die je moet zien</h2>
-        <p className="mff-sub">Beweeg over een project om de mozaïek te draaien.</p>
+        <p className="mff-eyebrow">Featured</p>
+        <h2 className="mff-heading">Projects you might explore!</h2>
+        <p className="mff-sub">move cursor over a project.</p>
         <div className="mff-bars">
           {featuredProjects.map((_, i) => (
             <button

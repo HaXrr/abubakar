@@ -9,9 +9,9 @@ export default function ProjectsPage() {
       <main className="pp-main">
         <header className="pp-hero">
           <p className="pp-eyebrow">Cases &amp; Demo&apos;s</p>
-          <h1 className="pp-heading">Projects Did</h1>
+          <h1 className="pp-heading">Projects Built</h1>
           <p className="pp-sub">
-            {projects.length} project build, deployed and maintained.
+            {projects.length} projects build, deployed and maintained.
           </p>
         </header>
 
